@@ -311,13 +311,6 @@ function generatePseudoMovesForPiece(state, from) {
   const color = piece.color;
   const forward = color === 'w' ? -1 : 1;
 
-  const addIfEmpty = (toR, toC) => {
-    if (!inBounds(toR, toC)) return false;
-    if (board[toR][toC] !== null) return false;
-    moves.push({ from, to: { r: toR, c: toC } });
-    return true;
-  };
-
   const addIfEnemy = (toR, toC) => {
     if (!inBounds(toR, toC)) return;
     const target = board[toR][toC];
